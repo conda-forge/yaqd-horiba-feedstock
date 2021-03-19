@@ -11,10 +11,11 @@ source:
   sha256: 2fa0b4ebe54b37bb479d35380127b048f39058f191a9d40097cb8276c08671c7
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
-    - yaqd-micro-hr = yaqd_horiba._microhr:MicroHR.main
+    - yaqd-horiba-micro-hr = yaqd_horiba._microhr:MicroHR.main
+    - yaqd-horiba-ihr320 = yaqd_horiba._horiba_ihr:HoribaIHR320.main
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -34,7 +35,8 @@ test:
     - yaqd_horiba
   commands:
     - pip check
-    - yaqd-micro-hr --help
+    - yaqd-horiba-micro-hr --help
+    - yaqd-horiba-ihr320 --help
   requires:
     - pip
 
