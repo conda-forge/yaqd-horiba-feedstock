@@ -1,5 +1,5 @@
 {% set name = "yaqd-horiba" %}
-{% set version = "2021.3.0" %}
+{% set version = "2021.3.1" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2fa0b4ebe54b37bb479d35380127b048f39058f191a9d40097cb8276c08671c7
+  sha256: 3402ef531ed3e2136d3208630a1e0fe33034719f67b4cad206688b9ed08b0dd6
 
 build:
-  number: 1
+  number: 0
   noarch: python
   entry_points:
     - yaqd-horiba-micro-hr = yaqd_horiba._microhr:MicroHR.main
