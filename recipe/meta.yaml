@@ -1,5 +1,5 @@
 {% set name = "yaqd-horiba" %}
-{% set version = "2021.3.1" %}
+{% set version = "2021.10.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3402ef531ed3e2136d3208630a1e0fe33034719f67b4cad206688b9ed08b0dd6
+  sha256: 4c1ec0bb42f6796e81b133d4fb471c979d5e1e2e60b00c600d17fcef69bce5e0
 
 build:
   number: 0
