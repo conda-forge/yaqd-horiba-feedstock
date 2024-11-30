@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 4c88c437aa6c4f1ebacaa3d9953f8031abb4d16c340b6a97bfdf1da03e947431
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - yaqd-horiba-micro-hr = yaqd_horiba._microhr:MicroHR.main
@@ -20,13 +20,13 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
     - flit
     - pyusb
     - yaqd-core >=2020.06.3
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - pyusb
     - yaqd-core >=2020.06.3
 
@@ -39,6 +39,7 @@ test:
     - yaqd-horiba-ihr320 --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://yaq.fyi
